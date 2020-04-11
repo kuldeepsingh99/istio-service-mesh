@@ -17,17 +17,23 @@ In this we will learn how to install istio
 
 [Click here to download PPT](https://drive.google.com/open?id=1i2KQ4A0OT00gLaLD4G3Z1WpJxVFE98kt)
 
-We have two microserice Customer and practice. Customer microservice calls the practice microservice. [Customer](https://hub.docker.com/repository/docker/kuldeep99/customer) and [practice](https://hub.docker.com/repository/docker/kuldeep99/practice) images are pulled from docker hub.
+We have two microserice **Customer** and **practice**. 
 
-One version of customer and four version of practice microservice are deployed to cluster.
+Customer microservice calls the practice microservice. 
 
-In this example we will see how to configure [customer](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/customer-service.yaml) and [practice](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/prac-service.yaml) yaml files. Setting up classic load balancer and access microservice in browser
+[Customer](https://hub.docker.com/repository/docker/kuldeep99/customer) and [practice](https://hub.docker.com/repository/docker/kuldeep99/practice) images are pulled from docker hub.
+
+One version of customer (V1) and four version of practice (V1,V2 and V3) microservice are deployed to cluster.
+
+In this example we will see how to configure [customer](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/customer-service.yaml) and [practice](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/prac-service.yaml) yaml files. Setting up classic load balancer and access microservice in browser.
+
+We also need to apply to apply [routing rules](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/default-destination-rule_v1_v2_v3.yaml) and [Customer Gateway & Virtual Service](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/customer-gatway.yaml)
 
 ## Domain setting ##
 
 [Click here to download PPT](https://drive.google.com/open?id=1EXpRpp-AtyJR_Njm2-KiPXLNqUimlM4c)
 
-How to set public domai in Route53 and map it with Load balancer and accessing the microservice with public domain
+In this we will see how to set public domain in Route53 and map it with Load balancer and finally accessing the microservice with public domain.
 
 ## Monitirong with prometheus & graphana ##
 
@@ -57,7 +63,22 @@ How to route 100% traffic to Version V1 and how to route Percentage wise traffic
 
 [Click here to download PPT](https://drive.google.com/open?id=1gE34q7_wN91kA3T1PwzN3dGtnSpDrCc0)
 
-How to handle Retry
+Here we have deployed [V4 of Practice Service](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/practice_buggy_deploy.yaml) which has some Issue and it will randomly throw exception
+
+Here is the Code
+```
+Random random = new Random(); 
+int randomNumber = random.nextInt(10);
+		
+if(randomNumber < 5) {
+  throw new Exception("not able to process");
+} else {
+  return "practice service V4";
+}
+```
+Here we will see how [istio retry](https://istio.io/docs/concepts/traffic-management/#retries) mechanism will help.
+
+In this example we will redirect all traffic to Practice(V4) version and check the sucess rate in graphana, then we will apply [Practice Service Retry rules yaml](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/practice_retry.yaml) and check the success rate
 
 ## Outlier Detection & Circuit Breaker ##
 
