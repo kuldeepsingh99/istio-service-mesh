@@ -5,19 +5,23 @@
 [Click here to download PPT](https://drive.google.com/open?id=1EwdjRzMtFKiV2JILaI6IChXGuO9eWJWy)
 
 In this example we will learn how to configure AWS Instance, i already have created an AWS image where kubernetes is also installed.
-How to configure master nodes and how to slave nodes join cluster
+In this we will see how configure master nodes and how slave nodes joins cluster
 
 ## Istio Installation Version 1.5 ##
 
 [Click here to download PPT](https://drive.google.com/open?id=15T_EraatqS7ARW9fsB4rQHo-Kqf-sLM6)
 
-Here we will learn how to install istio
+In this we will learn how to install istio
 
 ## Micro service installation ##
 
-[Click here to download PPT](https://drive.google.com/open?id=1i2KQ4A0OT00gLaLD4G3Z1WpJxVFE98kt
+[Click here to download PPT](https://drive.google.com/open?id=1i2KQ4A0OT00gLaLD4G3Z1WpJxVFE98kt)
 
-Installing microservice, Classic load balancer configuration and access microservice in browser
+We have two microserice Customer and practice. Customer microservice calls the practice microservice. [Customer](https://hub.docker.com/repository/docker/kuldeep99/customer) and [practice](https://hub.docker.com/repository/docker/kuldeep99/practice) images are pulled from docker hub.
+
+One version of customer and four version of practice microservice are deployed to cluster.
+
+In this example we will see how to configure [customer](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/customer-service.yaml) and [practice](https://github.com/kuldeepsingh99/servicemesh/blob/master/istio/prac-service.yaml) yaml files. Setting up classic load balancer and access microservice in browser
 
 ## Domain setting ##
 
