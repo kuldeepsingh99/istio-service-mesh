@@ -2,20 +2,26 @@
 
 Following are done in this example
 
-How to create instance in AWS
+* [How to create instance in AWS](https://drive.google.com/open?id=1EwdjRzMtFKiV2JILaI6IChXGuO9eWJWy)
 
-How to configure master and slave nodes
+* [IStio Installation](https://drive.google.com/open?id=15T_EraatqS7ARW9fsB4rQHo-Kqf-sLM6)
 
-Traffic routing
+* [Micro service installation](https://drive.google.com/open?id=1i2KQ4A0OT00gLaLD4G3Z1WpJxVFE98kt)
 
-Kiali Visualization
+* [Domain setting](https://drive.google.com/open?id=1EXpRpp-AtyJR_Njm2-KiPXLNqUimlM4c)
 
-Distributed tracing with jaeger
+* [Monitoring](https://drive.google.com/open?id=1NtMpqe_9JGgCToUyAH4irad03Kx4PTOV)
 
-Handling Retry
+* [Visualization with kiali](https://drive.google.com/open?id=1-eltKYF1fYcPQ8aZIqS6TmWcaBGklpDK)
 
-Outlier detecting & Circuit Breaker
+* [Distributed tracing with Jaeger](https://drive.google.com/open?id=13zItIyzlOsdXJmQg8sJc_MfkRBniwf1u)
 
-Mirroring
+* [Traffic Routing](https://drive.google.com/open?id=1j34yEsDLdiLPBnuSsPSbcXXJanywxCXz)
 
-HTTPS Configuration in NLB
+* [Handling Retry](https://drive.google.com/open?id=1gE34q7_wN91kA3T1PwzN3dGtnSpDrCc0)
+
+* [Outlier Detection & Circuit Breaker](https://drive.google.com/open?id=1MiIiLVTuq5iapg0KmCPl_rvaI5YNNwez)
+
+* [Mirroring](https://drive.google.com/open?id=1JhMf9LjQkVnTHOAke-__2QI_NAwYqBN_) 
+
+* [HTTPS Configuration in NLB](https://drive.google.com/open?id=1QtovvTCtXYm2EEDtYWTM-946fa-BJ0Om)
