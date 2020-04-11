@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer
+  labels:
+    app: customer
+    service: customer
+spec:
+  ports:
+  - port: 9090
+    name: http
+  selector:
+    app: customer
+    
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: customer-details
+  labels:
+    account: customer
+    
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-v1
+  labels:
+    app: customer
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: customer
+        version: v1
+    spec:
+      serviceAccountName: customer-details
+      containers:
+      - name: customer
+        image: kuldeep99/customer:v1
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: LOG_DIR
+          value: "/tmp/logs"
+        ports:
+        - containerPort: 9090
+---

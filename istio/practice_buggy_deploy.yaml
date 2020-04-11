@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: practice-v4
+  labels:
+    app: practice
+    version: v4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: practice
+      version: v4
+  template:
+    metadata:
+      labels:
+        app: practice
+        version: v4
+    spec:
+      serviceAccountName: practice-details
+      containers:
+      - name: practice
+        image: kuldeep99/practice:v4
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: LOG_DIR
+          value: "/tmp/logs"
+        ports:
+        - containerPort: 8000
+---

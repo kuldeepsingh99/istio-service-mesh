@@ -1,0 +1,33 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: practice-gateway
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: practiceinfo
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - practice-gateway
+  http:
+  - match:
+    - uri:
+        exact: /prac
+    route:
+    - destination:
+        host: practice
+        port:
+          number: 8000
