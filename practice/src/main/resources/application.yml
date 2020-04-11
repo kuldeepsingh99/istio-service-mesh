@@ -1,0 +1,11 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /prac
+  http2:
+    enabled: true
+  
+spring: 
+  application:
+    name: practice-service
+    
