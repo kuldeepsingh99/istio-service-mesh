@@ -101,4 +101,6 @@ In this task we will see how to configure Network load balancer, configure https
 
 ## Security ##
 
-Common soon
+[Click here to download PPT](https://drive.google.com/open?id=1Qld4IE9IMyHGXE0Qcp5Qb_2CgYEh6a1t)
+
+In this task we will see after applying mTLS Setting how pods without sidecar won't be able to access pods with sidecar
